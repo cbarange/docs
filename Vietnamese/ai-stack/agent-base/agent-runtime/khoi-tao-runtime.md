@@ -225,7 +225,7 @@ Runtime tự động tiêm các biến sau vào mỗi container:
 
 ### Request Header
 
-Mỗi request đến agent kèm theo:
+Các request đến agent có thể kèm theo các header sau — do client gửi lên và được chuyển nguyên vẹn đến container:
 
 | Header | Mô tả |
 |---|---|
@@ -233,7 +233,7 @@ Mỗi request đến agent kèm theo:
 | `X-GreenNode-AgentBase-Session-Id` | ID phiên — dùng làm `thread_id` cho LangGraph checkpointing |
 
 {% hint style="warning" %}
-Nếu agent sử dụng memory, hãy kiểm tra sự hiện diện của các header này và trả về lỗi nếu thiếu. Không dùng giá trị mặc định — sẽ gây trộn lẫn dữ liệu giữa các người dùng.
+AgentBase không truyền danh tính caller (đã xác thực ở Inbound Auth) vào container — các header này không được AgentBase xác thực và có thể bị client giả mạo. Nếu agent sử dụng memory, hãy kiểm tra sự hiện diện của các header này và trả về lỗi nếu thiếu. Không dùng giá trị mặc định và không dùng các header này cho logic phân quyền.
 {% endhint %}
 
 ### Header khi request đến container
