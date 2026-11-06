@@ -45,6 +45,10 @@ GreenNode is a cloud computing platform developed by VNG, providing businesses w
 
 \- _vMarketPlace is a centralized hub that provides GreenNode cloud solutions, enabling users to efficiently access a wide range of third-party applications and services._
 
+\- _GreenNode AI Platform is a cloud platform for developing, training, and deploying AI models on GreenNode GPU infrastructure. AI Platform provides Notebook for coding and experimentation, Network Volume for storing and sharing data across sessions, Model Catalog and Model Registry for model versioning, and Inference for deploying models as APIs for production applications. Integrated Guardrail helps control content and keep AI safe in operation._
+
+\- _GreenNode AgentBase is a specialized infrastructure platform for AI Agents, providing the operational, security, and governance layers needed to take agents from code to production. AgentBase includes Agent Runtime (deploy, scaling, rollback), Marketplace (one-click deployment of prebuilt agents such as OpenClaw), Access Control (Agent Identity and credential management), MCP Governance (controlling MCP tool calls via MCP Gateway and Policy Group), Protect & Govern (rate limiting), Memory (cross-session memory), Container Registry, Team & Permissions, and Usage & Budget (cost tracking, budget limits, and automatic alerts)._
+
 <figure><img src=".gitbook/assets/greennode cover.png" alt=""><figcaption></figcaption></figure>
 
 {% tabs %}

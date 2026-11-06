@@ -46,6 +46,10 @@ Các dịch vụ đang được cung cấp trên GreenNode Cloud, bao gồm:
 
 \-        vMarketPlace: là một trung tâm cung cấp các giải pháp đám mây của Greennode nhằm tối ưu hóa quy trình truy cập của người dùng đến nhiều ứng dụng và dịch vụ từ bên thứ ba.
 
+\-        "GreenNode AI Platform": là nền tảng điện toán đám mây hỗ trợ phát triển, huấn luyện và triển khai mô hình AI trên hạ tầng GPU của GreenNode. AI Platform cung cấp Notebook để lập trình và thử nghiệm, Network Volume để lưu trữ và chia sẻ dữ liệu giữa các phiên làm việc, Model Catalog và Model Registry để quản lý phiên bản mô hình, cùng Inference để triển khai mô hình thành API phục vụ ứng dụng thực tế. Tích hợp Guardrail giúp kiểm soát nội dung, đảm bảo AI an toàn khi vận hành.
+
+\-        "GreenNode AgentBase": là nền tảng hạ tầng chuyên biệt dành cho AI Agent, cung cấp đầy đủ lớp vận hành, bảo mật và kiểm soát cần thiết để đưa agent từ code lên production. AgentBase bao gồm Agent Runtime (deploy, scaling, rollback), Marketplace (triển khai agent dựng sẵn như OpenClaw chỉ với một cú click), Access Control (quản lý Agent Identity và credential), MCP Governance (kiểm soát MCP tool calls qua MCP Gateway và Policy Group), Protect & Govern (rate limiting), Memory (ghi nhớ xuyên session), Container Registry, Team & Permissions và Usage & Budget (theo dõi chi phí, đặt budget limit và cảnh báo tự động).
+
 <figure><img src=".gitbook/assets/greennode cover.png" alt=""><figcaption></figcaption></figure>
 
 {% tabs %}
