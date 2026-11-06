@@ -45,7 +45,7 @@ Khi tải giảm, AgentBase thu hẹp số bản sao về `minReplicas`.
 ### Security Settings
 
 * **IP Access Control** — giới hạn dải IP CIDR nguồn được phép truy cập endpoint của Runtime; để trống nếu muốn cho phép mọi nguồn.
-* **Inbound Identity** — cấu hình cách xác thực request đến, thông qua **Inbound Auth type**: **IAM Permissions** (IAM token của GreenNode AI Platform), **JSON Web Tokens (JWT)** (validate qua Discovery URL hoặc JWKS inline), hoặc **No authorization** (accessible công khai, không có access control).
+* **Inbound Identity** — cấu hình cách xác thực request đến, thông qua **Inbound Auth type**: **IAM Permissions** (IAM token của GreenNode AI Platform — **mặc định cho Runtime mới**, secure by default), **JSON Web Tokens (JWT)** (validate qua Discovery URL hoặc JWKS inline), hoặc **No authorization** (accessible công khai, không có access control).
 
 ### Hợp đồng dịch vụ (Service Contract)
 
@@ -115,7 +115,7 @@ Runtime: my-order-agent
 | **Registry Auth**         | Bật nếu là private                   | Username = robot account `backendName` (xem [Supporting Services — Robot Accounts](../supporting-services.md#create-a-robot-account)) |
 | **Environment Variables** | `KEY=value`                          | Chỉ cấu hình không nhạy cảm                                                                                                           |
 | **IP Access Control**     | `10.0.0.0/16`                        | Tùy chọn — dải IP CIDR nguồn được phép truy cập; để trống nếu muốn cho phép mọi nguồn                                                |
-| **Inbound Auth type**     | `JSON Web Tokens (JWT)`              | Tùy chọn — **IAM Permissions**, **JWT** (Discovery URL hoặc JWKS inline), hoặc **No authorization**                                  |
+| **Inbound Auth type**     | `IAM Permissions`                    | Mặc định (secure by default) — **IAM Permissions**; các lựa chọn khác: **JWT** (Discovery URL hoặc JWKS inline) hoặc **No authorization**                             |
 
 ![Security Settings — IP Access Control và Inbound Identity](<../../../.gitbook/assets/Agentbase-image/Security-Runtime.png>)
 
@@ -455,5 +455,18 @@ Các request đến agent của bạn bao gồm:
 | `X-GreenNode-AgentBase-Session-Id` | ID phiên (sử dụng làm `thread_id` cho LangGraph checkpointing)     |
 
 > **Quan trọng:** Nếu agent của bạn sử dụng memory, hãy xác thực rằng các header này có mặt và trả về lỗi nếu thiếu. Không sử dụng giá trị mặc định — các giá trị mặc định ngầm sẽ gây ra việc trộn lẫn dữ liệu giữa các người dùng.
+
+### Header khi request đến container
+
+Cách AgentBase xử lý header phụ thuộc vào chế độ **Inbound Auth** của endpoint:
+
+| Inbound Auth | Xử lý header `Authorization` và `x-agentbase-endpoint-inbound-header-authorization` |
+| --- | --- |
+| **No authorization** | Chuyển nguyên vẹn đến container — bạn có thể tự xác thực trong agent bằng các header này |
+| **IAM Permissions**, **JWT** | AgentBase dùng token trong các header này để xác thực caller, sau đó strip cả hai header trước khi request đến container — container không đọc được token, kể cả khi gửi token xác thực qua `x-agentbase-endpoint-inbound-header-authorization` và đặt token khác vào `Authorization` |
+
+Các header khác (ví dụ `X-Api-Key`, `Cookie`, `traceparent`, header tùy chỉnh) được chuyển nguyên vẹn ở mọi chế độ. `X-Forwarded-For` được nối thêm địa chỉ của proxy.
+
+> **Quan trọng:** AgentBase hiện không truyền danh tính caller (user ID, claim của JWT) vào container. Không xây dựng logic phân quyền dựa trên các header như `x-agentbase-endpoint-inbound-user-id`, `portal-user-id`, `iam-user-id` — các header này do client gửi lên và được chuyển nguyên vẹn, nên có thể bị giả mạo. Nếu agent cần một token riêng ở chế độ **IAM Permissions**/**JWT** (API key của ứng dụng, JWT của end-user), hãy gửi qua header tùy chỉnh, ví dụ `X-Api-Key` — không dùng `Authorization`.
 
 ***

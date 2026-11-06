@@ -70,7 +70,7 @@ Click **DEPLOY** in the **Custom Agent** card to continue.
 
 * **Private VPC**: enable to deploy inside your enterprise network
 
-**Step 4:** Configure Security Settings (optional) — control which clients can reach the Runtime and how incoming requests are authenticated
+**Step 4:** Configure Security Settings — control which clients can reach the Runtime and how incoming requests are authenticated
 
 ![Security Settings — IP Access Control and Inbound Identity](<../../../.gitbook/assets/Agentbase-image/Security-Runtime.png>)
 
@@ -83,12 +83,12 @@ Click **DEPLOY** in the **Custom Agent** card to continue.
 
 | Mode | Description |
 | ---- | ----------- |
-| **IAM Permissions** | Authenticates callers using the GreenNode AI Platform IAM token. |
+| **IAM Permissions** | Authenticates callers using the GreenNode AI Platform IAM token. This is the **default** mode for new Runtimes (secure by default). |
 | **JSON Web Tokens (JWT)** | Validates incoming JWT bearer tokens. Set the **JWT key source** to a **Discovery URL** (automatically fetches and refreshes public keys) or inline **JWKS**. |
 | **No authorization** | No authentication required. |
 
 {% hint style="warning" %}
-Selecting **No authorization** makes the Runtime publicly accessible to anyone with the endpoint URL, with no access control. Use **IAM Permissions** or **JWT** for production workloads.
+New Runtimes default to **IAM Permissions** — requests to the endpoint must carry a valid IAM token. Only switch to **No authorization** if you truly need a public endpoint: the Runtime then becomes accessible to anyone with the endpoint URL, with no access control.
 {% endhint %}
 
 **Step 5:** Configure Endpoint — AgentBase automatically creates a **DEFAULT** Endpoint
@@ -234,6 +234,25 @@ Incoming requests to your agent include:
 
 {% hint style="warning" %}
 If your agent uses memory, validate that these headers are present and return an error if missing. Do not fall back to default values — silent defaults cause data mixing between users.
+{% endhint %}
+
+### Header Handling on Incoming Requests
+
+How AgentBase handles headers depends on the endpoint's **Inbound Auth** mode:
+
+| Inbound Auth | `Authorization` and `x-agentbase-endpoint-inbound-header-authorization` headers |
+| ------------ | ------------------------------------------------------------------------------- |
+| **No authorization** | Forwarded intact to the container. You can authenticate inside the agent using these headers. |
+| **IAM Permissions**, **JWT** | AgentBase uses the token in these headers to authenticate the caller, then strips both headers before the request reaches the container. The container cannot read the token — even if you send the authentication token via `x-agentbase-endpoint-inbound-header-authorization` and put a different token in `Authorization`. |
+
+Other headers (e.g. `X-Api-Key`, `Cookie`, `traceparent`, custom headers) are forwarded intact in all modes. `X-Forwarded-For` has the proxy's address appended.
+
+{% hint style="info" %}
+In **IAM Permissions**/**JWT** mode, if your agent needs its own token (e.g. an application API key, or an end-user JWT to call other APIs), send it via a custom header such as `X-Api-Key`. Do not use `Authorization`.
+{% endhint %}
+
+{% hint style="warning" %}
+AgentBase does not currently pass the caller's identity (user ID, JWT claims) into the container. Do not build authorization logic on headers such as `x-agentbase-endpoint-inbound-user-id`, `portal-user-id`, `iam-user-id` — these headers are sent by the client and forwarded intact, so they can be spoofed.
 {% endhint %}
 
 ***
