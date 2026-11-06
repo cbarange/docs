@@ -73,7 +73,7 @@ Sensitive information không có hành động Block — mục tiêu của nó l
 
 Guardrail mặc định quét **nội dung hội thoại** (các vai trò user, assistant…) trong request. Phần **system prompt** (lời chỉ dẫn cấu hình cho model) mặc định **không bị quét** — vì nó thường chứa rule nghiệp vụ của chính bạn, quét sai dễ làm hỏng hoạt động của assistant.
 
-Nếu bạn muốn một phần system prompt được quét, chèn tag `<vng-guard-content>` vào đúng vị trí bắt đầu phần cần quét — chi tiết thao tác xem ở [Sử dụng Guardrail](su-dung-guardrail.md).
+Nếu bạn muốn một phần system prompt được quét, chèn tag `<vng-guard-content>` vào đúng vị trí bắt đầu phần cần quét — chi tiết xem ở [Quét system prompt với tag `<vng-guard-content>`](quet-system-prompt-voi-tag-vng-guard-content.md).
 
 {% hint style="info" %}
 Tag chỉ có tác dụng **mở rộng** phạm vi quét — nó không thể dùng để "tắt" quét phần nào đang được kiểm tra. Ai chèn thêm tag vào nội dung của mình cũng chỉ làm phần đó bị quét kỹ hơn.
@@ -104,4 +104,5 @@ Trạng thái chỉ phản ánh việc cấu hình đã được "nối dây" xu
 | -------------------------------------------------------- | ----------------------------------------- |
 | Tạo Guardrail đầu tiên và gắn vào model                  | [Sử dụng Guardrail](su-dung-guardrail.md) |
 | Gọi API qua Guardrail, xem request bị chặn trông thế nào | [Sử dụng Guardrail](su-dung-guardrail.md) |
+| Quét phần nội dung động trong system prompt | [Quét system prompt với tag `<vng-guard-content>`](quet-system-prompt-voi-tag-vng-guard-content.md) |
 | Tra cứu giới hạn, thông báo lỗi và FAQ                   | [Tham chiếu và FAQ](tham-chieu-va-faq.md) |

@@ -845,6 +845,7 @@
       * [Import Model Registry với custom container](ai-stack/ai-platform/model-registry/import-model-registry-voi-custom-container.md)
     * [Guardrail](ai-stack/ai-platform/guardrail/README.md)
       * [Sử dụng Guardrail](ai-stack/ai-platform/guardrail/su-dung-guardrail.md)
+      * [Quét system prompt với tag vng-guard-content](ai-stack/ai-platform/guardrail/quet-system-prompt-voi-tag-vng-guard-content.md)
       * [Tham chiếu và FAQ](ai-stack/ai-platform/guardrail/tham-chieu-va-faq.md)
   * [Model as a Service (MaaS)](ai-stack/model-as-a-service/README.md)
     * [Giới thiệu về AI Model](ai-stack/model-as-a-service/gioi-thieu-ve-ai-model.md)

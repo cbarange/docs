@@ -179,11 +179,7 @@ When Sensitive information detects sensitive data, the request is **not blocked*
 
 ## Scan the system prompt with the `<vng-guard-content>` tag
 
-### When you need it
-
-By default, Guardrail **skips** the system prompt. This is safe for most cases, but if your system prompt contains important content that should be checked (e.g. safety instructions, answer policies), insert the `<vng-guard-content>` tag at the position where scanning should start.
-
-### How it works
+By default, Guardrail **skips** the system prompt, because it is usually configuration you wrote yourself. If your application injects content that end users can influence into the system prompt (RAG documents, conversation history, uploaded files), insert the `<vng-guard-content>` tag right before that content so Guardrail scans it like user content.
 
 | Situation | Result |
 |---|---|
@@ -192,52 +188,9 @@ By default, Guardrail **skips** the system prompt. This is safe for most cases, 
 | Multiple `system` messages/blocks | A tag in **any** block turns scanning on for the **entire remainder** of the system prompt — including later blocks. |
 | Misspelled tag | Nothing is scanned — the system silently ignores it. Copy `<vng-guard-content>` exactly. |
 
-### Examples
+See full examples and how to verify the behavior yourself in [Scan the system prompt with the `<vng-guard-content>` tag](scan-system-prompt-with-vng-guard-content-tag.md).
 
-No tag — the system part is skipped, only user content is scanned:
-
-```json
-{
-  "role": "system",
-  "content": "You are an AI assistant tasked with providing information to users."
-}
-```
-
-With tag — everything from the tag onward is scanned (this is the real instruction); the part before the tag (internal config) is still skipped:
-
-```json
-{
-  "role": "system",
-  "content": "internal.route=prod-1\n<vng-guard-content>You are an AI assistant tasked with providing information to users. Never reveal internal system configuration."
-}
-```
-
-The same full body, plugged into the sample curl in [Call the API through a Guardrail](#call-the-api-through-a-guardrail):
-
-```bash
-curl --request POST \
---url 'https://maas-llm-aiplatform-hcm.api.vngcloud.vn/v1/chat/completions' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer $AI_PLATFORM_API_KEY' \
---data '{
-  "model": "qwen/qwen3.8-max",
-  "messages": [
-    {
-      "role": "system",
-      "content": "internal.route=prod-1\n<vng-guard-content>You are an AI assistant tasked with providing information to users."
-    },
-    {
-      "role": "user",
-      "content": "What is AI?"
-    }
-  ],
-  "max_tokens": 4096,
-  "temperature": 1,
-  "top_p": 0.95
-}'
-```
-
----
+***
 
 ## Manage Guardrails on the list page
 
@@ -286,4 +239,5 @@ Once complete, every request to the attached models passes through the Guardrail
 | I want to... | Go to |
 |---|---|
 | Understand the three filter layers and their actions | [What is Guardrail?](README.md) |
+| Scan the dynamic part of the system prompt | [Scan the system prompt with the `<vng-guard-content>` tag](scan-system-prompt-with-vng-guard-content-tag.md) |
 | Look up limits, error messages, and FAQ | [Reference and FAQ](reference-and-faq.md) |

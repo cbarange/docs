@@ -33,7 +33,7 @@ Trang này tổng hợp giới hạn, thông báo lỗi thường gặp và câu
 
 | Nguyên nhân | Cách xử lý |
 |---|---|
-| Nội dung nằm trong system prompt không có tag | Chèn `<vng-guard-content>` vào trước phần cần quét (xem [Quét system prompt](su-dung-guardrail.md#quet-system-prompt-bang-tag-vng-guard-content)). |
+| Nội dung nằm trong system prompt không có tag | Chèn `<vng-guard-content>` vào trước phần cần quét (xem [Quét system prompt](quet-system-prompt-voi-tag-vng-guard-content.md)). |
 | Gõ sai tag | Sao chép đúng chuỗi `<vng-guard-content>` — sai một ký tự là không có tác dụng, không báo lỗi. |
 | Rule prompt-based mô tả quá hẹp | Bổ sung mô tả rõ hơn / thêm rule cho dạng vi phạm mới. |
 | Model chưa gắn Guardrail | Kiểm tra cột **Protected models**; gắn lại qua **Manage Models**. |

@@ -33,7 +33,7 @@ This page consolidates limits, common error messages, and frequently asked quest
 
 | Cause | Fix |
 |---|---|
-| The content is in a system prompt without a tag | Insert `<vng-guard-content>` before the part that needs scanning (see [Scan the system prompt](using-guardrails.md#scan-the-system-prompt-with-the-vng-guard-content-tag)). |
+| The content is in a system prompt without a tag | Insert `<vng-guard-content>` before the part that needs scanning (see [Scan the system prompt](scan-system-prompt-with-vng-guard-content-tag.md)). |
 | Misspelled tag | Copy the exact string `<vng-guard-content>` — a single wrong character makes it ineffective, with no error. |
 | Prompt-based rule description too narrow | Add a clearer description / add rules for new violation patterns. |
 | Model not attached to the Guardrail | Check the **Protected models** column; re-attach via **Manage Models**. |

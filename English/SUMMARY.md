@@ -755,6 +755,7 @@
       * [Import Model Registry Using a Custom Container](ai-stack/ai-platform/model-registry/import-model-registry-using-a-custom-container.md)
     * [Guardrail](ai-stack/ai-platform/guardrail/README.md)
       * [Using Guardrails](ai-stack/ai-platform/guardrail/using-guardrails.md)
+      * [Scan the system prompt with the vng-guard-content tag](ai-stack/ai-platform/guardrail/scan-system-prompt-with-vng-guard-content-tag.md)
       * [Reference and FAQ](ai-stack/ai-platform/guardrail/reference-and-faq.md)
   * [Model as a Service (MaaS)](ai-stack/model-as-a-service/README.md)
     * [Understanding AI Models](ai-stack/model-as-a-service/understanding-ai-models.md)

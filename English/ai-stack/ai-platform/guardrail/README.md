@@ -93,7 +93,7 @@ Sensitive information has no Block action — its goal is to make sensitive data
 
 By default, Guardrail scans the **conversation content** (user, assistant… roles) in a request. The **system prompt** (configuration instructions for the model) is **not scanned** by default — it usually contains your own business rules, and scanning it incorrectly can break your assistant's behavior.
 
-If you want part of the system prompt scanned, insert the `<vng-guard-content>` tag at the exact position where scanning should start — see [Using Guardrails](using-guardrails.md) for details.
+If you want part of the system prompt scanned, insert the `<vng-guard-content>` tag at the exact position where scanning should start — see [Scan the system prompt with the `<vng-guard-content>` tag](scan-system-prompt-with-vng-guard-content-tag.md) for details.
 
 {% hint style="info" %}
 The tag only **extends** the scan scope — it cannot be used to turn scanning off for content that is already checked. Anyone inserting the tag into their content only causes that portion to be scanned more thoroughly.
@@ -124,4 +124,5 @@ The status only reflects whether the configuration has been "wired" to the gatew
 |---|---|
 | Create my first Guardrail and attach it to a model | [Using Guardrails](using-guardrails.md) |
 | Call the API through a Guardrail and see what a blocked request looks like | [Using Guardrails](using-guardrails.md) |
+| Scan the dynamic part of the system prompt | [Scan the system prompt with the `<vng-guard-content>` tag](scan-system-prompt-with-vng-guard-content-tag.md) |
 | Look up limits, error messages, and FAQ | [Reference and FAQ](reference-and-faq.md) |

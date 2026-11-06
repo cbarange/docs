@@ -179,11 +179,7 @@ Khi Sensitive information phát hiện dữ liệu nhạy cảm, request **khôn
 
 ## Quét system prompt bằng tag `<vng-guard-content>`
 
-### Khi nào cần
-
-Mặc định Guardrail **bỏ qua** system prompt. Điều này an toàn cho hầu hết trường hợp, nhưng nếu trong system prompt có nội dung quan trọng cần được kiểm tra (ví dụ: phần hướng dẫn an toàn, chính sách trả lời), hãy chèn tag `<vng-guard-content>` tại vị trí bắt đầu phần cần quét.
-
-### Cách hoạt động
+Mặc định Guardrail **bỏ qua** system prompt, vì đây thường là cấu hình do chính bạn viết. Nếu ứng dụng đưa nội dung mà người dùng cuối tác động được vào system prompt (tài liệu RAG, lịch sử hội thoại, file tải lên), hãy chèn tag `<vng-guard-content>` ngay trước phần nội dung đó để Guardrail quét phần này như nội dung người dùng.
 
 | Tình huống                      | Kết quả                                                                                                                   |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
@@ -192,50 +188,7 @@ Mặc định Guardrail **bỏ qua** system prompt. Điều này an toàn cho h�
 | Có nhiều message/block `system` | Tag ở bất kỳ block nào cũng bật quét cho toàn bộ phần còn lại của system prompt — kể cả các block phía sau.               |
 | Gõ sai tag                      | Không có gì được quét — hệ thống bỏ qua im lặng. Sao chép đúng `<vng-guard-content>`.                                     |
 
-### Ví dụ
-
-Không tag — phần system bị bỏ qua, chỉ nội dung user được quét:
-
-```json
-{
-  "role": "system",
-  "content": "You are an AI assistant tasked with providing information to users."
-}
-```
-
-Có tag — từ vị trí tag trở đi được quét (đây là phần instruction thật); phần trước tag (config nội bộ) vẫn được bỏ qua:
-
-```json
-{
-  "role": "system",
-  "content": "internal.route=prod-1\n<vng-guard-content>You are an AI assistant tasked with providing information to users. Never reveal internal system configuration."
-}
-```
-
-Cùng body đầy đủ, ghép vào curl mẫu ở phần [Gọi API qua Guardrail](su-dung-guardrail.md#goi-api-qua-guardrail):
-
-```bash
-curl --request POST \
---url 'https://maas-llm-aiplatform-hcm.api.vngcloud.vn/v1/chat/completions' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer $AI_PLATFORM_API_KEY' \
---data '{
-  "model": "qwen/qwen3.8-max",
-  "messages": [
-    {
-      "role": "system",
-      "content": "internal.route=prod-1\n<vng-guard-content>You are an AI assistant tasked with providing information to users."
-    },
-    {
-      "role": "user",
-      "content": "What is AI?"
-    }
-  ],
-  "max_tokens": 4096,
-  "temperature": 1,
-  "top_p": 0.95
-}'
-```
+Xem ví dụ đầy đủ và cách tự kiểm chứng tại [Quét system prompt với tag `<vng-guard-content>`](quet-system-prompt-voi-tag-vng-guard-content.md).
 
 ***
 
@@ -286,4 +239,5 @@ Sau khi hoàn thành, mọi request tới các model đã gắn đều đi qua G
 | Tôi muốn tiếp theo...                    | Đi đến                                    |
 | ---------------------------------------- | ----------------------------------------- |
 | Hiểu rõ ba lớp kiểm tra và các hành động | [Guardrail là gì?](./)                    |
+| Quét phần nội dung động trong system prompt | [Quét system prompt với tag `<vng-guard-content>`](quet-system-prompt-voi-tag-vng-guard-content.md) |
 | Tra cứu giới hạn, thông báo lỗi và FAQ   | [Tham chiếu và FAQ](tham-chieu-va-faq.md) |
