@@ -45,7 +45,7 @@ When load drops, AgentBase scales replicas back down to `minReplicas`.
 ### Security Settings
 
 * **IP Access Control** — restricts which source IP CIDR ranges can reach the Runtime endpoint; leave empty to allow all sources.
-* **Inbound Identity** — configures how incoming requests are authenticated, via an **Inbound Auth type**: **IAM Permissions** (GreenNode AI Platform IAM token), **JSON Web Tokens (JWT)** (validated via a Discovery URL or inline JWKS), or **No authorization** (publicly accessible, no access control).
+* **Inbound Identity** — configures how incoming requests are authenticated, via an **Inbound Auth type**: **IAM Permissions** (GreenNode AI Platform IAM token — **the default for new Runtimes**, secure by default), **JSON Web Tokens (JWT)** (validated via a Discovery URL or inline JWKS), or **No authorization** (publicly accessible, no access control).
 
 ### Service Contract
 
@@ -115,7 +115,7 @@ Runtime: my-order-agent
 | **Registry Auth**         | Enable if private                    | Username = robot account `backendName` (see [Supporting Services — Robot Accounts](../supporting-services.md#create-a-robot-account)) |
 | **Environment Variables** | `KEY=value`                          | Non-sensitive config only                                                                                                               |
 | **IP Access Control**     | `10.0.0.0/16`                        | Optional — allowed source IP CIDR ranges; leave empty to allow all sources                                                            |
-| **Inbound Auth type**     | `JSON Web Tokens (JWT)`              | Optional — **IAM Permissions**, **JWT** (Discovery URL or inline JWKS), or **No authorization**                                       |
+| **Inbound Auth type**     | `IAM Permissions`                    | Default (secure by default) — **IAM Permissions**; other options: **JWT** (Discovery URL or inline JWKS) or **No authorization**                                     |
 
 ![Security Settings — IP Access Control and Inbound Identity](<../../../.gitbook/assets/Agentbase-image/Security-Runtime.png>)
 
@@ -455,5 +455,18 @@ Incoming requests to your agent include:
 | `X-GreenNode-AgentBase-Session-Id` | Session ID (use as `thread_id` for LangGraph checkpointing) |
 
 > **Important:** If your agent uses memory, validate that these headers are present and return an error if missing. Do not fall back to default values — silent defaults cause data mixing between users.
+
+### Header Handling on Incoming Requests
+
+How AgentBase handles headers depends on the endpoint's **Inbound Auth** mode:
+
+| Inbound Auth | Handling of `Authorization` and `x-agentbase-endpoint-inbound-header-authorization` headers |
+| ------------ | -------------------------------------------------------------------------------------------- |
+| **No authorization** | Forwarded intact to the container — you can authenticate inside the agent using these headers |
+| **IAM Permissions**, **JWT** | AgentBase uses the token in these headers to authenticate the caller, then strips both headers before the request reaches the container — the container cannot read the token, even if the authentication token is sent via `x-agentbase-endpoint-inbound-header-authorization` with a different token in `Authorization` |
+
+Other headers (e.g. `X-Api-Key`, `Cookie`, `traceparent`, custom headers) are forwarded intact in all modes. `X-Forwarded-For` has the proxy's address appended.
+
+> **Important:** AgentBase does not currently pass the caller's identity (user ID, JWT claims) into the container. Do not build authorization logic on headers such as `x-agentbase-endpoint-inbound-user-id`, `portal-user-id`, `iam-user-id` — these headers are sent by the client and forwarded intact, so they can be spoofed. If your agent needs its own token in **IAM Permissions**/**JWT** mode (application API key, end-user JWT), send it via a custom header such as `X-Api-Key` — not `Authorization`.
 
 ***

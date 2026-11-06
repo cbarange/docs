@@ -70,7 +70,7 @@ Nhấp **DEPLOY** trong card **Custom Agent** để tiếp tục.
 
 - **Private VPC**: bật để triển khai trong mạng nội bộ doanh nghiệp
 
-**Bước 4:** Cấu hình Security Settings (tùy chọn) — kiểm soát client nào được phép truy cập Runtime và cách xác thực request đến
+**Bước 4:** Cấu hình Security Settings — kiểm soát client nào được phép truy cập Runtime và cách xác thực request đến
 
 ![Security Settings — IP Access Control và Inbound Identity](<../../../.gitbook/assets/Agentbase-image/Security-Runtime.png>)
 
@@ -83,12 +83,12 @@ Nhấp **DEPLOY** trong card **Custom Agent** để tiếp tục.
 
 | Chế độ | Mô tả |
 | --- | --- |
-| **IAM Permissions** | Xác thực caller bằng IAM token của GreenNode AI Platform. |
+| **IAM Permissions** | Xác thực caller bằng IAM token của GreenNode AI Platform. Đây là chế độ **mặc định** cho Runtime mới (secure by default). |
 | **JSON Web Tokens (JWT)** | Validate JWT bearer token đính kèm trong request. Chọn **JWT key source** là **Discovery URL** (tự fetch và refresh public keys) hoặc JWKS inline. |
 | **No authorization** | Không yêu cầu xác thực. |
 
 {% hint style="warning" %}
-Chọn **No authorization** khiến Runtime accessible công khai với bất kỳ ai có endpoint URL, không có access control. Dùng **IAM Permissions** hoặc **JWT** cho môi trường production.
+Runtime mới mặc định dùng **IAM Permissions** — request đến endpoint phải kèm IAM token hợp lệ. Chỉ chuyển sang **No authorization** khi bạn thực sự cần endpoint công khai: khi đó Runtime accessible với bất kỳ ai có endpoint URL, không có access control.
 {% endhint %}
 
 **Bước 5:** Cấu hình Endpoint — AgentBase tự động tạo một Endpoint **DEFAULT**
@@ -234,6 +234,25 @@ Mỗi request đến agent kèm theo:
 
 {% hint style="warning" %}
 Nếu agent sử dụng memory, hãy kiểm tra sự hiện diện của các header này và trả về lỗi nếu thiếu. Không dùng giá trị mặc định — sẽ gây trộn lẫn dữ liệu giữa các người dùng.
+{% endhint %}
+
+### Header khi request đến container
+
+Cách AgentBase xử lý header phụ thuộc vào chế độ **Inbound Auth** của endpoint:
+
+| Inbound Auth | Header `Authorization` và `x-agentbase-endpoint-inbound-header-authorization` |
+| --- | --- |
+| **No authorization** | Được chuyển nguyên vẹn đến container. Bạn có thể tự xác thực trong agent bằng các header này. |
+| **IAM Permissions**, **JWT** | AgentBase dùng token trong các header này để xác thực caller, sau đó strip cả hai header trước khi request đến container. Container không đọc được token — kể cả khi bạn gửi token xác thực qua `x-agentbase-endpoint-inbound-header-authorization` và đặt token khác vào `Authorization`. |
+
+Các header khác (ví dụ `X-Api-Key`, `Cookie`, `traceparent`, header tùy chỉnh) được chuyển nguyên vẹn ở mọi chế độ. `X-Forwarded-For` được nối thêm địa chỉ của proxy.
+
+{% hint style="info" %}
+Ở chế độ **IAM Permissions**/**JWT**, nếu agent cần một token riêng (ví dụ API key của ứng dụng, hoặc JWT của end-user để gọi tiếp API khác), hãy gửi token đó qua một header tùy chỉnh, ví dụ `X-Api-Key`. Không dùng `Authorization`.
+{% endhint %}
+
+{% hint style="warning" %}
+AgentBase hiện không truyền danh tính caller (user ID, claim của JWT) vào container. Không xây dựng logic phân quyền dựa trên các header như `x-agentbase-endpoint-inbound-user-id`, `portal-user-id`, `iam-user-id` — các header này do client gửi lên và được chuyển nguyên vẹn, nên có thể bị giả mạo.
 {% endhint %}
 
 ---
