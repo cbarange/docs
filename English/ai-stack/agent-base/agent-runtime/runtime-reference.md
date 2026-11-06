@@ -447,14 +447,14 @@ The Runtime automatically injects these into every container:
 
 ### Request Headers
 
-Incoming requests to your agent include:
+Incoming requests to your agent may include the following headers — sent by the client and forwarded intact:
 
 | Header                             | Description                                                 |
 | ---------------------------------- | ----------------------------------------------------------- |
 | `X-GreenNode-AgentBase-User-Id`    | End-user ID (use as `actorId` for memory operations)        |
 | `X-GreenNode-AgentBase-Session-Id` | Session ID (use as `thread_id` for LangGraph checkpointing) |
 
-> **Important:** If your agent uses memory, validate that these headers are present and return an error if missing. Do not fall back to default values — silent defaults cause data mixing between users.
+> **Important:** AgentBase does not pass the caller's identity (authenticated at Inbound Auth) into the container — these headers are not verified by AgentBase and can be spoofed by the client. If your agent uses memory, validate that these headers are present and return an error if missing. Do not use default values and do not use these headers for authorization logic.
 
 ### Header Handling on Incoming Requests
 
