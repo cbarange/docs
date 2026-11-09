@@ -49,14 +49,21 @@ Chọn Cluster Mode để tiếp tục tạo Redis Cluster.
 
 {% hint style="info" %} Khi bật Cluster Mode, hệ thống hỗ trợ High Availability với tự động failover. Một số lệnh Redis không khả dụng ở chế độ này. {% endhint %}
 
+### Chọn Sharding type
+
+Sau khi chọn Cluster Mode, chọn trường Sharding type:
+
+* Non-sharding: Một shard (node group) gồm 1 Primary và các Replica. Đây là lựa chọn hiện có và được chọn sẵn.
+* Sharding: Đang gắn nhãn Coming soon, chưa chọn được.
+
 ### Cấu hình số Node
 
-Sau khi chọn Cluster Mode, cấu hình trường Number of nodes (2–10):
+Chọn trường Number of nodes (3–10, mặc định 3):
 
 * Tổng số node bao gồm 1 Primary (Writer) và các Replica (Reader) còn lại.
-* Ví dụ: chọn 4 nodes = 1 Primary + 3 Replicas.
+* Ví dụ: chọn 3 nodes = 1 Primary + 2 Replicas; chọn 4 nodes = 1 Primary + 3 Replicas.
 
-Cluster topology preview hiển thị sơ đồ trực quan với số Master, Replica và tổng số nodes theo cấu hình đã chọn.
+Ô bên cạnh trường (ví dụ 1 Primary (Writer) • 2 Replicas (Reader)) cập nhật theo số node đã chọn.
 
 ---
 

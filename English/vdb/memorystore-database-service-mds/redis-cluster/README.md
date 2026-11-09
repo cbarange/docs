@@ -1,6 +1,6 @@
 # Redis Cluster
 
-**Redis Cluster** on vDB is a Redis deployment with a **Non-sharding** architecture consisting of 1 Master node and up to 9 Replica nodes (2–10 nodes total), with automatic failover and vBackup integration for comprehensive data protection.
+**Redis Cluster** on vDB is a Redis deployment with a **Non-sharding** architecture consisting of 1 Master node and 2 to 9 Replica nodes (3–10 nodes total), with automatic failover and vBackup integration for comprehensive data protection.
 
 ***
 
@@ -9,7 +9,7 @@
 Redis Cluster on vDB follows a **1 Master – N Replicas** model:
 
 * **Master node:** Handles all read and write operations.
-* **Replica nodes (1–9):** Asynchronously replicate data from the Master, serve read operations, and are ready for failover.
+* **Replica nodes (2–9):** Asynchronously replicate data from the Master, serve read operations, and are ready for failover.
 * **Automatic Failover:** When the Master fails, a Replica is automatically promoted to become the new Master. The cluster continues to operate after failover completes.
 
 ```
@@ -50,7 +50,7 @@ You can change the number of Replicas in a Cluster after creation with **no down
 * **Scale down:** Removes replicas in descending index order, waiting for each step to complete before proceeding.
 
 {% hint style="warning" %}
-Each change can only increase or decrease by **1 node** at a time. The UI shows only two options (current−1 or current+1) — jumping multiple steps in a single action is not allowed. This ensures each sync completes before the next step, preventing replication errors during abrupt scaling.
+Each change can only increase or decrease by **1 node** at a time (current−1 or current+1), and the cluster must keep between **3 and 10 nodes**. Jumping multiple steps in a single action is not allowed. This ensures each sync completes before the next step, preventing replication errors during abrupt scaling.
 {% endhint %}
 
 ***
