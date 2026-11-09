@@ -51,14 +51,21 @@ Select **Cluster Mode** to proceed with creating a Redis Cluster.
 When Cluster Mode is enabled, the system supports High Availability with automatic failover. Note that some Redis commands are unavailable in this mode.
 {% endhint %}
 
+### Select Sharding Type
+
+After selecting Cluster Mode, choose the **Sharding type**:
+
+* **Non-sharding:** A single shard (node group) with 1 Primary and its Replicas. This is the option available now and is selected by default.
+* **Sharding:** Labeled **Coming soon** and cannot be selected yet.
+
 ### Configure Number of Nodes
 
-After selecting Cluster Mode, configure the **Number of nodes** (2–10):
+Select the **Number of nodes** (3–10, default 3):
 
 * The total includes **1 Primary (Writer)** and the remaining **Replicas (Reader)**.
-* For example: selecting 4 nodes = 1 Primary + 3 Replicas.
+* For example: selecting 3 nodes = 1 Primary + 2 Replicas; selecting 4 nodes = 1 Primary + 3 Replicas.
 
-The **Cluster topology preview** shows a visual diagram with the number of Masters, Replicas, and total nodes based on your configuration.
+The breakdown next to the field (for example, **1 Primary (Writer) • 2 Replicas (Reader)**) updates as you change the number of nodes.
 
 ***
 

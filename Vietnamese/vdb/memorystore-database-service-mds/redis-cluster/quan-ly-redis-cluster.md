@@ -44,7 +44,7 @@ Tab này hiển thị:
 
 ---
 
-## Thay đổi số Replica (Edit Nodes)
+## Thay đổi số Replica (Edit Number of Nodes)
 
 Bạn có thể scale up hoặc scale down số Replica của cluster sau khi tạo mà không gây downtime.
 
@@ -52,16 +52,15 @@ Bạn có thể scale up hoặc scale down số Replica của cluster sau khi t�
 
 Để thay đổi số Replica:
 
-1. Tại trang chi tiết cluster, chọn tab Topology.
-2. Chọn Edit nodes.
-3. Trong dialog Edit Cluster, chọn Number of nodes mới — UI chỉ hiển thị 2 lựa chọn: current−1 hoặc current+1.
-4. Kiểm tra phần Cost Summary bên phải để xem chi phí thay đổi:
-   * CURRENT CONFIGURATION: Cấu hình và giá hiện tại.
-   * NEW CONFIGURATION: Cấu hình và giá mới.
+1. Tại trang chi tiết cluster, chọn Edit Number of Nodes. Nút này có ở thanh thao tác phía trên trang và ở tab Topology; cả hai đều mở cùng một dialog.
+2. Trong dialog Edit Number of Nodes, nhập Number of nodes mới. Trường chỉ nhận current−1 hoặc current+1, trong khoảng 3 đến 10 nodes.
+3. Kiểm tra phần bên phải để xem chi phí thay đổi:
+   * CURRENT NUMBER OF NODES: Số node và giá hiện tại.
+   * NEW NUMBER OF NODES: Số node và giá mới.
    * Total: Chênh lệch chi phí (xanh = tăng, đỏ = giảm).
-5. Chọn SAVE để áp dụng.
+4. Chọn SAVE để áp dụng.
 
-{% hint style="info" %} Mỗi lần edit chỉ được thay đổi ±1 node. Để đạt số node mong muốn, lưu và lặp lại thao tác. Cơ chế này đảm bảo sync hoàn tất trước mỗi bước, tránh lỗi replication. {% endhint %}
+{% hint style="info" %} Mỗi lần edit chỉ được thay đổi ±1 node, và cluster phải giữ tối thiểu 3 nodes (1 Master + 2 Replicas). Để đạt số node mong muốn, lưu và lặp lại thao tác. Cơ chế này đảm bảo sync hoàn tất trước mỗi bước, tránh lỗi replication. {% endhint %}
 
 ---
 

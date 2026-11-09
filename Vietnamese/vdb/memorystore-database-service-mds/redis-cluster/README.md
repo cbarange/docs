@@ -1,6 +1,6 @@
 # Redis Cluster
 
-**Redis Cluster** trên vDB là kiểu triển khai Redis với kiến trúc **Non-sharding** gồm 1 Master node và tối đa 9 Replica nodes (tổng 2–10 nodes), hỗ trợ tự động failover và tích hợp vBackup để bảo vệ dữ liệu toàn diện.
+**Redis Cluster** trên vDB là kiểu triển khai Redis với kiến trúc **Non-sharding** gồm 1 Master node và từ 2 đến 9 Replica nodes (tổng 3–10 nodes), hỗ trợ tự động failover và tích hợp vBackup để bảo vệ dữ liệu toàn diện.
 
 ***
 
@@ -9,7 +9,7 @@
 Redis Cluster trên vDB hoạt động theo mô hình **1 Master – N Replicas**:
 
 * **Master node:** Xử lý toàn bộ read và write operations.
-* **Replica nodes (1–9):** Đồng bộ dữ liệu bất đồng bộ từ Master, phục vụ read operations và sẵn sàng failover.
+* **Replica nodes (2–9):** Đồng bộ dữ liệu bất đồng bộ từ Master, phục vụ read operations và sẵn sàng failover.
 * **Automatic Failover:** Khi Master gặp sự cố, một Replica được tự động promote thành Master mới. Cluster tiếp tục hoạt động sau khi failover hoàn tất.
 
 ```
@@ -50,7 +50,7 @@ Bạn có thể thay đổi số lượng Replica của Cluster sau khi tạo m�
 * **Scale down:** Xóa replica theo thứ tự index giảm dần, mỗi bước chờ hoàn tất trước khi tiếp tục.
 
 {% hint style="warning" %}
-Mỗi lần thay đổi chỉ được tăng hoặc giảm **1 node**. UI chỉ hiển thị 2 lựa chọn (current−1 hoặc current+1) — không thể nhảy nhiều bước trong một lần. Đây là cơ chế bảo vệ để đảm bảo sync hoàn tất trước mỗi bước tiếp theo, tránh lỗi replication khi scale đột ngột.
+Mỗi lần thay đổi chỉ được tăng hoặc giảm **1 node** (current−1 hoặc current+1), và cluster phải giữ từ **3 đến 10 nodes**. Không thể nhảy nhiều bước trong một lần. Đây là cơ chế bảo vệ để đảm bảo sync hoàn tất trước mỗi bước tiếp theo, tránh lỗi replication khi scale đột ngột.
 {% endhint %}
 
 ***

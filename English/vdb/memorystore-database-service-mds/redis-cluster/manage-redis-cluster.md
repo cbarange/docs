@@ -44,7 +44,7 @@ This tab shows:
 
 ***
 
-## Change Number of Replicas (Edit Nodes)
+## Change Number of Replicas (Edit Number of Nodes)
 
 You can scale up or scale down the number of Replicas after cluster creation with no downtime.
 
@@ -52,17 +52,16 @@ You can scale up or scale down the number of Replicas after cluster creation wit
 
 **To change the number of Replicas:**
 
-1. On the cluster detail page, select the **Topology** tab.
-2. Click **Edit nodes**.
-3. In the **Edit Cluster** dialog, select a new **Number of nodes** — the UI shows only two options: current−1 or current+1.
-4. Review the **Cost Summary** panel on the right:
-   * **CURRENT CONFIGURATION:** Current setup and price.
-   * **NEW CONFIGURATION:** New setup and price.
+1. On the cluster detail page, click **Edit Number of Nodes**. The button is available in the action bar at the top of the page and in the **Topology** tab; both open the same dialog.
+2. In the **Edit Number of Nodes** dialog, enter the new **Number of nodes**. The field only accepts current−1 or current+1, within the range of 3 to 10 nodes.
+3. Review the panel on the right:
+   * **CURRENT NUMBER OF NODES:** Current number of nodes and price.
+   * **NEW NUMBER OF NODES:** New number of nodes and price.
    * **Total:** Cost difference (green = increase, red = decrease).
-5. Click **SAVE** to apply.
+4. Click **SAVE** to apply.
 
 {% hint style="info" %}
-Each edit allows only **±1 node** at a time. To reach a target node count, save and repeat the operation. This ensures each sync completes before the next step, preventing replication errors.
+Each edit allows only **±1 node** at a time, and the cluster must keep at least **3 nodes** (1 Master + 2 Replicas). To reach a target node count, save and repeat the operation. This ensures each sync completes before the next step, preventing replication errors.
 {% endhint %}
 
 ***
