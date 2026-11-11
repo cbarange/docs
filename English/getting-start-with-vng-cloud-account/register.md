@@ -1,45 +1,43 @@
 # Register new account
 
-## Đăng ký tài khoản
+**Guide to creating a GreenNode account with an email address or a Google account to start using services on the GreenNode Portal:**
 
-**Hướng dẫn tạo tài khoản GreenNode bằng email hoặc tài khoản Google để bắt đầu sử dụng các dịch vụ trên GreenNode Portal:**&#x42;ước 1:Truy cập https://register.greennode.ai/signup?hl=vi hoặc tại trang chủ GreenNode (https://greennode.ai), nhấp chọn chức năng “Đăng ký” như hình:Màn hình đăng ký sẽ hiện ra như sau:
+**Step 1:** Go to [https://register.greennode.ai/signup?hl=vi](https://register.greennode.ai/signup?hl=vi), or go to the GreenNode homepage ([https://greennode.ai](https://greennode.ai)) and click “Sign Up”.
 
-**Bước 2: Tại trang 'Đăng ký tài khoản':**
+**Step 2: On the “Create new account” page:**
 
-Bạn có thể đăng ký tài khoản mới theo một trong hai cách:
+You can create a new account in one of two ways:
 
-* **2.1: Đăng ký bằng email**
-  * **2.1.1: Điền thông tin vào biểu mẫu đăng ký.**
-    *   Điền đầy đủ các trường sau:
+* #### **2.1: Sign up with email**
+  * **2.1.1: Fill in the sign-up form.**
+    *   Fill in all of the following fields:
 
-        <table data-header-hidden><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td>Trường</td><td>Bắt buộc</td><td>Mô tả</td></tr><tr><td><strong>Email</strong></td><td>Có</td><td>Địa chỉ email dùng để đăng nhập và nhận thông báo từ GreenNode.</td></tr><tr><td><strong>Họ và tên</strong></td><td>Có</td><td>Họ và tên đầy đủ của bạn.</td></tr><tr><td><strong>Mật khẩu</strong></td><td>Có</td><td>Mật khẩu đăng nhập. Xem yêu cầu về mật khẩu bên dưới.</td></tr><tr><td><strong>Xác nhận mật khẩu</strong></td><td>Có</td><td>Nhập lại chính xác mật khẩu ở trường <strong>Mật khẩu</strong>.</td></tr><tr><td><strong>Số điện thoại</strong></td><td>Có</td><td>Chọn mã quốc gia ở danh sách bên trái (mặc định <strong>Vietnam (+84)</strong>), sau đó nhập số điện thoại.</td></tr><tr><td>​</td><td colspan="2">​</td></tr></tbody></table>
+        <table><thead><tr><th width="174.5">Field</th><th width="86">Required</th><th>Description</th></tr></thead><tbody><tr><td><strong>Email</strong></td><td>Yes</td><td>The email address used to log in and receive notifications from GreenNode.</td></tr><tr><td><strong>Full name</strong></td><td>Yes</td><td>Your full name.</td></tr><tr><td><strong>Password</strong></td><td>Yes</td><td>Your login password. See the password requirements below.</td></tr><tr><td><strong>Confirm password</strong></td><td>Yes</td><td>Re-enter the exact password from the <strong>Password</strong> field.</td></tr><tr><td><strong>Phone number</strong></td><td>Yes</td><td>Select the country code from the list on the left (default: <strong>Vietnam (+84)</strong>), then enter your phone number.</td></tr></tbody></table>
+    *   Read and tick the consent checkboxes:
 
-        ​
-    *   Đọc và đánh dấu vào các ô đồng ý:
+        * I agree to the Service Term Agreement (required).
+        * I agree to the Personal Data Protection Policy for the necessary purposes in Section 5.1 (required).
+        * I agree to the Personal Data Protection Policy for the optional processing purposes in Section 5.2 (optional).
 
-        * **Tôi đồng ý với Thỏa Thuận Sử Dụng Dịch Vụ** — _bắt buộc_.
-        * **Tôi đồng ý với Chính sách bảo vệ dữ liệu cá nhân cho các mục đích cần thiết tại mục 5.1** — _bắt buộc_.
-        * **Tôi đồng ý với Chính sách bảo vệ dữ liệu cá nhân cho các mục đích xử lý tuỳ chọn tại mục 5.2** — _tuỳ chọn_.
+        You can click the links for the Terms of Service, Section 5.1, and Section 5.2 to read the full text before agreeing.
+    * Click **Sign Up** to complete the form.
+  *   **2.1.2: Activate your account:**
 
-        Bạn có thể nhấn vào các liên kết **Thỏa Thuận Sử Dụng Dịch Vụ**, **mục 5.1** và **mục 5.2** để đọc toàn văn trước khi đồng ý.
-    * Nhấn **Đăng ký** để hoàn tất bước điền thông tin.
-  * 2.1.2: Kích hoạt tài khoản:Sau khi hoàn tất, hệ thống sẽ gửi một email đến địa chỉ email vừa đăng ký, trong đó có chứa đường link để kích hoạt tài khoản. Quý khách vui lòng kiểm tra email và kích hoạt tài khoản trước khi Đăng Nhập.
-* **2.2: Đăng ký bằng tài khoản Google** - dùng tài khoản Google sẵn có, không cần tạo mật khẩu mới.
-  * **2.2.1: Đăng nhập vào tài khoản Google:**
-    * Tại trang **Đăng ký tài khoản**, nhấn **Sử dụng tài khoản Google**.
-    * Chọn tài khoản Google bạn muốn sử dụng và đăng nhập theo hướng dẫn của Google.
-  * **2.2.2: Bổ sung thông tin:**
-    *   Sau khi đăng nhập Google thành công, hệ thống chuyển đến màn hình **Vui lòng nhập các thông tin bên dưới trước khi tiếp tục đăng nhập.** Kiểm tra và hoàn thiện các trường sau:
+      Once you have finished, the system will send an email to the address you registered, containing a link to activate your account. Please check your email and activate your account before logging in.
+* #### **2.2: Sign up with a Google account**&#x20;
+  * **2.2.1: Log in to your Google account:**
+    * On the Sign Up page, click **Continue with Google**
+    * Select the Google account you want to use and log in by following Google’s instructions.
+  * **2.2.2: Provide additional information:**
+    *   After you have logged in to Google successfully, the system will take you to the screen “Please enter the information below before continuing to log in.” Check and complete the following fields:
 
-        | Trường            | Bắt buộc | Mô tả                                                                                          |
-        | ----------------- | -------- | ---------------------------------------------------------------------------------------------- |
-        | **Email**         | Có       | Được điền sẵn bằng email của tài khoản Google bạn vừa đăng nhập (có biểu tượng Google ở đầu).  |
-        | **Họ và tên**     | Có       | Được điền sẵn theo tên trên tài khoản Google. Kiểm tra và sửa lại nếu cần.                     |
-        | **Số điện thoại** | Có       | Chọn mã quốc gia ở danh sách bên trái (mặc định **Vietnam (+84)**), sau đó nhập số điện thoại. |
-    * Đọc và đánh dấu vào các ô đồng ý:
-      * **Tôi đồng ý với Thỏa Thuận Sử Dụng Dịch Vụ** — _bắt buộc_.
-      * **Tôi đồng ý với Chính sách bảo vệ dữ liệu cá nhân cho các mục đích cần thiết tại mục 5.1** — _bắt buộc_.
-      * **Tôi đồng ý với Chính sách bảo vệ dữ liệu cá nhân cho các mục đích xử lý tuỳ chọn tại mục 5.2** — _tuỳ chọn_.
-    * Bấm **Đăng Ký** để kết thúc.
 
-Các thông tin về email và số điện thoại của khách hàng được GreenNode mã hóa theo thuật toán Symmetric AES nhằm đảm bảo an toàn thông tin khách hàng
+
+        <table><thead><tr><th width="161">Field</th><th width="103">Required</th><th>Description</th></tr></thead><tbody><tr><td><strong>Email</strong></td><td>Yes</td><td>Pre-filled with the email of the Google account you just logged in with (marked with a Google icon at the start).</td></tr><tr><td><strong>Full name</strong></td><td>Yes</td><td>Pre-filled with the name on your Google account. Check it and edit it if needed.</td></tr><tr><td><strong>Phone number</strong></td><td>Yes</td><td>Select the country code from the list on the left (default: <strong>Vietnam (+84)</strong>), then enter your phone number.</td></tr></tbody></table>
+    * Read and tick the consent checkboxes:
+      * I agree to the Service Term Agreement (required).
+      * I agree to the Personal Data Protection Policy for the necessary purposes in Section 5.1 (required).
+      * I agree to the Personal Data Protection Policy for the optional processing purposes in Section 5.2 (optional).
+    * Click **Register** to finish.
+
+Once registration is complete, the system will send you an email confirming that your account has been activated.
