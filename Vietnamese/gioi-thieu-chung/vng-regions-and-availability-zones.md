@@ -157,7 +157,6 @@ URL của các service trong cùng 1 region sẽ giống nhau.
 | **vMarketplace** |    -   |    x   |      x      |      x      |    -   |    x   | [HCM](https://marketplace.console.greennode.ai/overview) \| [HAN](https://marketplace-han-1.console.greennode.ai/overview) |
 | **vColo**        |    x   |    -   |      -      |      -      |    -   |    -   | [Portal](https://vcolo.console.greennode.ai/overview)                                                                     |
 | **AI Platform**  |    -   |    x   | Coming Soon | Coming Soon |    -   |    -   | [Portal](https://aiplatform.console.greennode.ai/overview)                                                                |
-| **AI Gateway**   |    x   |    -   |      -      |      -      |    -   |    -   | [Portal](https://aigateway.console.greennode.ai)                                                                          |
 | **MaaS**         |    x   |    -   |      -      |      -      |    -   |    -   | [Portal](https://aiplatform.console.greennode.ai/models)                                                                  |
 {% endtab %}
 {% endtabs %}

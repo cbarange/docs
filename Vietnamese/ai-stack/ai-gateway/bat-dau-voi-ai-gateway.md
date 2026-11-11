@@ -1,3 +1,0 @@
-# Bắt đầu với AI Gateway
-
-Bạn có thể sử dụng các hướng dẫn sau đây để bắt đầu làm việc với AI Gateway. Trong quá trình sử dụng, nếu gặp vấn đề gì với dịch vụ, bạn hãy vui lòng liên hệ với GreenNode qua email [**support@greennode.ai**](mailto:support@greennode.ai) hoặc hotline **19001549.**

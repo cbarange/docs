@@ -1,6 +1,6 @@
 # Release Notes — GreenNode AI Stack
 
-A single timeline of updates across all GreenNode AI Stack products — GreenNode AgentBase, Model as a Service, AI Gateway, AI Platform, AI Coding, and GenAI Studio.
+A single timeline of updates across all GreenNode AI Stack products — GreenNode AgentBase, Model as a Service, AI Platform, AI Coding, and GenAI Studio.
 
 ***
 
@@ -66,7 +66,6 @@ GreenNode has upgraded the AI Gateway architecture to better handle growing traf
 * **Low Latency:** Reduced latency in API key authentication and rate limiting.
 * **Scalability:** No longer limited by memory — serves more models and more users.
 * **High Performance:** Handles Token Plan traffic reliably.
-* Learn more at [AI Gateway](ai-gateway/README.md).
 
 **GreenNode AI Stack — Token Plan**
 

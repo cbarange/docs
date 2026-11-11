@@ -37,17 +37,11 @@ GreenNode cung cấp một nền tảng AI toàn diện giúp doanh nghiệp tri
 * Phù hợp để lưu trữ dữ liệu huấn luyện, checkpoint mô hình, model registry và output inference.
 * Dễ dàng tích hợp với các thành phần như AI Platform, VKS và các công cụ huấn luyện phổ biến.
 
-#### 5. AI Gateway – điều phối và giám sát tập trung
-
-* Cổng truy cập duy nhất cho nhiều mô hình AI, hỗ trợ routing thông minh và caching để tối ưu hiệu năng và chi phí.
-* Theo dõi truy cập, sinh audit logs, giám sát hành vi sử dụng qua metrics và alerts.
-* Tích hợp guardrails để kiểm soát nội dung và đảm bảo AI an toàn khi triển khai thực tế.
-
-#### 6. Model-as-a-Service
+#### 5. Model-as-a-Service
 
 * Hỗ trợ truy cập hơn đa dạng **mô hình GenAI** hàng đầu như GPT, Claude, Gemini, DeepSeek... chỉ với 1 API thống nhất.
 * Bao gồm cả mô hình mã nguồn mở và các mô hình tối ưu cho tiếng Việt.
-* Dịch vụ hiện đang trong giai đoạn hoàn thiện (coming soon).
+* Các chức năng của **AI Gateway** (routing thông minh, caching, rate limit, authentication token,...) hiện đã được tích hợp và áp dụng cho toàn bộ MaaS của GreenNode.
 * Rút ngắn thời gian tích hợp, giúp doanh nghiệp nhanh chóng thử nghiệm và đưa AI vào thực tế.
 
 ***

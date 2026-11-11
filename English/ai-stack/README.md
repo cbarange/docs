@@ -37,17 +37,11 @@ GreenNode provides a comprehensive AI platform that helps enterprises deploy, in
 * Suitable for storing training data, model checkpoints, model registry, and inference output.
 * Integrates easily with components such as AI Platform, VKS, and popular training tools.
 
-#### 5. AI Gateway – Centralized routing and monitoring
-
-* A single access point for multiple AI models, with intelligent routing and caching to optimize performance and cost.
-* Tracks access, generates audit logs, and monitors usage behavior through metrics and alerts.
-* Integrates guardrails to control content and keep AI safe in production.
-
-#### 6. Model-as-a-Service
+#### 5. Model-as-a-Service
 
 * Provides access to a wide range of leading **GenAI models** such as GPT, Claude, Gemini, and DeepSeek through a single unified API.
 * Includes both open-source models and models optimized for Vietnamese.
-* The service is currently being finalized (coming soon).
+* AI Gateway capabilities (intelligent routing, caching, rate limiting, authentication tokens, and more) are now integrated and applied to all GreenNode MaaS.
 * Shortens integration time so enterprises can experiment and bring AI into production quickly.
 
 ***
