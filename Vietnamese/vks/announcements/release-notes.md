@@ -1,5 +1,17 @@
 # Release notes
 
+## Nov 11, 2026
+
+VKS (VNG Kubernetes Engine) vừa ra mắt bản cập nhật mới với các cải tiến sau:
+
+**Tính năng mới:**
+
+* **Cấu hình ACL listener vLB qua annotation:** GreenNode LoadBalancer Controller (từ phiên bản **0.4.2**) cho phép cấu hình ACL cho listener của Load Balancer ngay trên manifest (Service NLB, Ingress ALB), không cần vào vLB Portal.
+  * Thêm annotation **`vks.vngcloud.vn/dropped-cidrs`** (danh sách CIDR/IP IPv4 bị chặn, `0.0.0.0/0` = chặn toàn bộ) và **`vks.vngcloud.vn/acl-default-action`** (`accept`/`drop` cho IP không khớp rule nào).
+  * Annotation `vks.vngcloud.vn/inbound-cidrs` có sẵn nay mang đúng nghĩa whitelist: không đặt `acl-default-action` thì default action là **drop**.
+  * Gỡ annotation trả listener về giá trị ACL trước đó; ACL đặt tay trên Portal không bị ghi đè.
+  * Hướng dẫn chi tiết tại [Integrate with Network Load Balancer](../network/working-with-nlb/integrate-with-network-load-balancer.md) và [Cấu hình cho một Network Load Balancer](../network/working-with-nlb/cau-hinh-cho-mot-network-load-balancer.md).
+
 ## Sep 28, 2026 <a href="#sep_07_2026" id="sep_07_2026"></a>
 
 VKS (VNG Kubernetes Engine) vừa ra mắt bản cập nhật mới với các cải tiến sau:

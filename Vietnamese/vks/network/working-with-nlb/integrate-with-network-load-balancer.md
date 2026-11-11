@@ -291,6 +291,60 @@ kubectl apply -f nginx-service-lb4.yaml
 
 ***
 
+### Chặn truy cập bằng ACL annotation <a href="#integratewithnetworkloadbalancer-chantruycapbangaclannotation" id="integratewithnetworkloadbalancer-chantruycapbangaclannotation"></a>
+
+Từ phiên bản **0.4.2** của GreenNode LoadBalancer Controller, bạn có thể cấu hình ACL cho listener của Load Balancer ngay trên manifest (Service hoặc Ingress) mà không cần vào vLB Portal. ACL được đánh giá theo thứ tự: **Dropped CIDRs** → **Allowed CIDRs** → **Default action**; rule khớp đầu tiên sẽ thắng, IP không khớp rule nào sẽ áp dụng **Default action**. Lưu lượng bị drop sẽ bị bỏ gói im lặng, client sẽ thấy timeout thay vì lỗi từ chối kết nối.
+
+Các annotation liên quan:
+
+* `vks.vngcloud.vn/dropped-cidrs`: danh sách CIDR/IP IPv4 bị chặn, ngăn cách bằng dấu phẩy.
+* `vks.vngcloud.vn/inbound-cidrs`: danh sách CIDR/IP IPv4 được phép truy cập.
+* `vks.vngcloud.vn/acl-default-action`: `accept` hoặc `drop`.
+
+Ví dụ: chặn 2 nguồn truy cập vào Service nginx ở trên bằng cách thêm annotation vào Service:
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  annotations:
+    vks.vngcloud.vn/dropped-cidrs: "203.0.113.9/32,198.51.100.0/24"
+spec:
+  selector:
+    app: nginx
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+```
+
+Sau đó chạy lại lệnh `kubectl apply -f nginx-service-lb4.yaml` để cập nhật Service.
+
+Một số trường hợp thường dùng:
+
+| Mục đích | Annotation |
+|---|---|
+| Chặn một số IP/dải IP | `vks.vngcloud.vn/dropped-cidrs: "203.0.113.9/32,198.51.100.0/24"` |
+| Chỉ cho phép một số dải IP | `vks.vngcloud.vn/inbound-cidrs: "192.0.2.0/24"` |
+| Cho phép một dải, trừ vài IP | `vks.vngcloud.vn/inbound-cidrs: "192.0.2.0/24"` và `vks.vngcloud.vn/dropped-cidrs: "192.0.2.13/32"` |
+| Chặn toàn bộ truy cập | `vks.vngcloud.vn/dropped-cidrs: "0.0.0.0/0"` |
+
+{% hint style="info" %}
+Lưu ý:
+
+* ACL annotation chỉ hỗ trợ IPv4 và yêu cầu GreenNode LoadBalancer Controller từ phiên bản **0.4.2**. Các annotation này cũng dùng được cho Ingress (ALB).
+* Nếu đặt `inbound-cidrs` mà không đặt `acl-default-action`, default action sẽ là `drop` — chỉ các dải IP đã khai báo được truy cập.
+* Giá trị không hợp lệ (CIDR sai định dạng, IPv6, default action lạ) sẽ khiến Service/Ingress báo lỗi và ACL giữ nguyên cấu hình hợp lệ trước đó.
+* Gỡ annotation sẽ trả listener về giá trị ACL trước khi LBC quản lý.
+* Nếu nhiều Service/Ingress dùng chung một Load Balancer, hãy khai báo ACL nhất quán; nếu không, controller sẽ báo lỗi xung đột.
+{% endhint %}
+
+Chi tiết ý nghĩa từng annotation, xem tại [Cấu hình cho một Network Load Balancer](cau-hinh-cho-mot-network-load-balancer.md).
+
+***
+
 ### **Kiểm tra thông tin Deployment, Service vừa deploy**
 
 * Chạy câu lệnh sau đây để kiểm tra **Deployment**
