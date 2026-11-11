@@ -38,9 +38,9 @@ Các thiết lập trên trang:
 
 <figure><img src="../.gitbook/assets/screenshot_1794381201.png" alt="" width="375"><figcaption></figcaption></figure>
 
-Hệ thống sẽ gửi email thông báo các thiết lập đa yếu tố đã áp dụng.
+Hệ thống sẽ gửi email thông báo các thiết lập xác thực 2 yếu tố đã áp dụng.
 
-Sau khi hoàn tất quá trình đăng ký chứng thực đa yếu tố, ở bước đăng nhập, tuỳ lựa chọn của khách hàng ở trên sẽ có các hình thức xác thực khác nhau.
+Sau khi hoàn tất quá trình đăng ký xác thực 2 yếu tố, ở bước đăng nhập, tuỳ lựa chọn của khách hàng ở trên sẽ có các hình thức xác thực khác nhau.
 
 * Đối với nhận OTP qua SMS, ngay sau khi bạn nhập đúng username và password, hệ thống sẽ tự động gửi một OTP đến số điện thoại của bạn, chỉ cần nhập mã nhận được để tiếp tục Đăng Nhập.
 * Đối với đăng nhập thông qua Google Authenticator. Bạn vui lòng mở ứng dụng Google Authenticator trong máy và sao chép 6 số PIN hiển thị trong ứng dụng và nhập vào form yêu cầu của chúng tôi.
