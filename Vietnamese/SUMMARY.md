@@ -1256,6 +1256,7 @@
   * [Hướng dẫn hủy tài khoản](huong-dan-su-dung-tai-khoan/huong-dan-huy-tai-khoan.md)
   * [Hướng dẫn thay đổi số điện thoại](huong-dan-su-dung-tai-khoan/huong-dan-thay-doi-so-dien-thoai.md)
   * [Hướng dẫn quản lý địa chỉ nhận hóa đơn](huong-dan-su-dung-tai-khoan/huong-dan-quan-ly-dia-chi-nhan-hoa-don.md)
+  * [Chính sách mật khẩu và phiên đăng nhập](huong-dan-su-dung-tai-khoan/chinh-sach-mat-khau-va-phien-dang-nhap.md)
 * [Những câu hỏi thường gặp (FAQ)](nhung-cau-hoi-thuong-gap-faq/README.md)
   * [vServer](nhung-cau-hoi-thuong-gap-faq/vserver/README.md)
   * [vStorage](nhung-cau-hoi-thuong-gap-faq/storage.md)

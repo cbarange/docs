@@ -52,6 +52,4 @@ Bạn có thể đăng ký tài khoản mới theo một trong hai cách:
       * **Tôi đồng ý với Chính sách bảo vệ dữ liệu cá nhân cho các mục đích xử lý tuỳ chọn tại mục 5.2** — _tuỳ chọn_.
     * Bấm **Đăng Ký** để kết thúc.
 
-Các thông tin về email và số điện thoại của khách hàng được GreenNode mã hóa theo thuật toán Symmetric AES nhằm đảm bảo an toàn thông tin khách hàng
-
-<br>
+Sau khi đăng ký thành công, hệ thống sẽ gửi email thông báo tài khoản đã kích hoạt thành công.
