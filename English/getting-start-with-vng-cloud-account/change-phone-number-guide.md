@@ -1,15 +1,9 @@
-# Change Phone Number Guide
+# Change Phone Number
 
-**Step 1**: Log in to the Single Sign-On account management page: [https://dashboard.console.greennode.ai/](https://dashboard.console.greennode.ai/). In the account management function menu, select the "**Change Phone Number**" option.
+**Step 1:** Go to [https://register.greennode.ai/changephonenumber](https://register.greennode.ai/changephonenumber), or select Change phone number from the account menu.
 
-<figure><img src="../.gitbook/assets/image (486).png" alt=""><figcaption></figcaption></figure>
+**Step 2:** Enter the new phone number you want to use.
 
-**Step 2:** Enter the phone number you want to change to. Then, click "**Send OTP**" to receive the OTP code from the email you have registered.
+**Note:** The OTP for changing your phone number is always sent to your email.
 
-![](<../.gitbook/assets/image (487).png>)<br>
-
-Our system will send you an email titled "**GreenNode - OTP Update Phone Number.**" Copy the OTP code from the email and paste it into the "**Enter OTP**" field.
-
-**Step 3:** Enter the security code and click "**Save Settings**" to save the new phone number. You will receive a notification along with a successful phone number change email, similar to the image.
-
-.
+After your phone number has been changed successfully, the system will send an email confirming that your phone number has been changed.

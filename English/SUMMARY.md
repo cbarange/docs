@@ -1206,7 +1206,7 @@
   * [Two-Factor Authentication (2FA)](getting-start-with-vng-cloud-account/two-factor-authentication-2fa.md)
   * [Forgot Password](getting-start-with-vng-cloud-account/change-password-guide.md)
   * [Remove Account](getting-start-with-vng-cloud-account/remove-account-guide.md)
-  * [Change Phone Number Guide](getting-start-with-vng-cloud-account/change-phone-number-guide.md)
+  * [Change Phone Number](getting-start-with-vng-cloud-account/change-phone-number-guide.md)
   * [Invoice address information user guide](getting-start-with-vng-cloud-account/invoice-address-information-user-guide.md)
   * [Password Policy and Session Changes](getting-start-with-vng-cloud-account/password-policy-and-session-changes.md)
 * [FAQ](faq/README.md)
