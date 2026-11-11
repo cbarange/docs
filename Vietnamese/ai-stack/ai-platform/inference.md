@@ -7,7 +7,7 @@ Tính năng **Inference** giúp bạn triển khai mô hình AI thành một d�
 * Deploy mô hình từ **Model Registry** dưới dạng một **REST API endpoint**.
 * Hỗ trợ chọn loại máy chủ tính toán (**CPU/GPU**) theo yêu cầu hiệu năng.
 * Tự động scale theo lưu lượng request.
-* Có thể tích hợp với **AI Gateway** để quản lý bảo mật, rate limit, auth token…
+* Có thể tích hợp với **MaaS** để quản lý bảo mật, rate limit, auth token…
 
 ***
 

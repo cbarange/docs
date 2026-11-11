@@ -1,6 +1,6 @@
 # Lịch sử cập nhật — GreenNode AI Stack
 
-Tổng hợp các bản cập nhật của toàn bộ sản phẩm trong GreenNode AI Stack — GreenNode AgentBase, Model as a Service, AI Gateway, AI Platform, AI Coding và GenAI Studio.
+Tổng hợp các bản cập nhật của toàn bộ sản phẩm trong GreenNode AI Stack — GreenNode AgentBase, Model as a Service, AI Platform, AI Coding và GenAI Studio.
 
 ***
 
@@ -66,7 +66,6 @@ GreenNode nâng cấp kiến trúc AI Gateway để đáp ứng tốt hơn lưu 
 * **Low Latency:** Giảm độ trễ authentication API key và rate limiter.
 * **Scalability:** Không còn giới hạn bởi memory — phục vụ nhiều model, nhiều user hơn.
 * **High Performance:** Đáp ứng tốt traffic từ Token Plan.
-* Tìm hiểu thêm tại [AI Gateway](ai-gateway/README.md).
 
 **GreenNode AI Stack — Token Plan**
 

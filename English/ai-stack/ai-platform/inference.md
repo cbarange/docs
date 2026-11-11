@@ -7,7 +7,7 @@ Overview of Inference
 * Deploy models from Model Registry as REST API endpoints.
 * Supports selecting compute resources (CPU/GPU) based on performance requirements.
 * Automatically scales based on request traffic.
-* Can integrate with AI Gateway for security management, rate limiting, authentication tokens, and more.
+* Can integrate with MaaS for security management, rate limiting, authentication tokens, and more.
 
 ***
 

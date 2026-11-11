@@ -86,7 +86,7 @@ model_max_output_tokens = 16400
 disable_response_storage = true
 
 [model_providers.maas]
-name = "MAAS AI Gateway"
+name = "MAAS"
 
 # base_url KHÔNG có trailing /responses — Codex tự append (→ .../v1/responses)
 base_url = "https://maas-llm-aiplatform-hcm.api.vngcloud.vn/v1"
@@ -112,7 +112,7 @@ model_max_output_tokens = 16400
 disable_response_storage = true
 
 [model_providers.maas]
-name = "MAAS AI Gateway"
+name = "MAAS"
 
 # base_url KHÔNG có trailing /responses — Codex tự append (→ .../v1/responses)
 base_url = "https://tokenplan.api.greennode.ai/v1"
