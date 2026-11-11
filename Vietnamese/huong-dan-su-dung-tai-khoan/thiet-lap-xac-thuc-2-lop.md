@@ -1,4 +1,4 @@
-# Thiết lập xác thực 2 lớp (2FA)
+# Thiết lập xác thực 2 yếu tố (2FA)
 
 **Xác thực 2 yếu tố** (2FA) bổ sung một lớp bảo mật cho tài khoản GreenNode. Khi được bật, ngoài mật khẩu, bạn cần nhập thêm **mã OTP** (mã dùng một lần) mỗi khi đăng nhập. Nhờ vậy, kể cả khi lộ mật khẩu, người khác cũng không thể đăng nhập vào tài khoản của bạn.
 
@@ -16,8 +16,8 @@ Các thiết lập trên trang:
 | Thiết lập                         | Mô tả                                                                                                                           |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | **Hỏi OTP khi Đăng Nhập**         | Công tắc chính. Khi **Bật**, hệ thống yêu cầu nhập mã OTP mỗi lần đăng nhập. Khi **Tắt**, các tuỳ chọn bên dưới bị vô hiệu hoá. |
-| **Gửi OTP đến điện thoại**        | Nhận mã OTP qua số điện thoại của tài khoản. Phương thích này chỉ hỗ trợ số điện thoại có mã quốc gia Việt Nam +84              |
-| **Số điện thoại**                 | Số điện thoại nhận OTP (chỉ hiển thị, không sửa tại đây). Nếu cần thay đổi thì sSử dụng chức năng Đổi số điện thoại.            |
+| **Gửi OTP đến điện thoại**        | Nhận mã OTP qua số điện thoại của tài khoản. Phương thức này chỉ hỗ trợ số điện thoại có mã quốc gia Việt Nam +84               |
+| **Số điện thoại**                 | Số điện thoại nhận OTP (chỉ hiển thị, không sửa tại đây). Nếu cần thay đổi thì sử dụng chức năng Đổi số điện thoại.             |
 | **Ứng dụng Google Authenticator** | Nhận mã OTP từ ứng dụng Google Authenticator.                                                                                   |
 | **QR Code** — **Tạo QR code mới** | Tạo mã QR để liên kết tài khoản GreenNode với ứng dụng Google Authenticator.                                                    |
 | **Lưu thiết lập**                 | Lưu các thay đổi.                                                                                                               |
