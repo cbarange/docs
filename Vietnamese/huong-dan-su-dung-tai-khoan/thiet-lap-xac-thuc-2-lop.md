@@ -1,48 +1,46 @@
 # Thiết lập xác thực 2 lớp (2FA)
 
-2FA nghĩa là **Xác thực Hai Yếu Tố** — là một dạng của **chứng thực đa yếu tố (Multi-Factor Authentication - MFA)**.
+**Xác thực 2 yếu tố** (2FA) bổ sung một lớp bảo mật cho tài khoản GreenNode. Khi được bật, ngoài mật khẩu, bạn cần nhập thêm **mã OTP** (mã dùng một lần) mỗi khi đăng nhập. Nhờ vậy, kể cả khi lộ mật khẩu, người khác cũng không thể đăng nhập vào tài khoản của bạn.
 
-Khi đăng nhập vào GreenNode, thay vì chỉ cần **một yếu tố** (thường là mật khẩu), 2FA yêu cầu người dùng phải xác minh thêm **một yếu tố khác nữa**, ví dụ:
+GreenNode hỗ trợ hai cách nhận mã OTP:
 
-* **Yếu tố thứ nhất (bắt buộc):** Cái bạn biết — mật khẩu.
-* **Yếu tố thứ hai:** Cái bạn có — điện thoại (nhận OTP, app Authenticator).&#x20;
+* **Gửi OTP đến điện thoại** — mã được gửi tới số điện thoại đã đăng ký của tài khoản (chỉ hỗ trợ số điện thoại có mã quốc gia Việt Nam +84).
+* **Ứng dụng Google Authenticator** — mã được tạo trên ứng dụng Google Authenticator cài trên điện thoại của bạn.
 
-Sau đây và ví dụ cụ thể cho phép bạn thiết lập chứng thực đa yếu tố:
+Truy cập https://register.greennode.ai/change2fa?hl=vi hoặc chọn chức năng **"Xác thực 2 lớp"** trên menu tài khoản.
 
-**Bước 1:** Đăng nhập vào [trang quản trị tài khoản](https://dashboard.console.greennode.ai/). Trên menu các chức năng quản trị tài khoản, chọn **"Xác thực 2 lớp".**
+<figure><img src="../.gitbook/assets/screenshot_1794380515.png" alt="" width="180"><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (170).png" alt=""><figcaption></figcaption></figure>
+Các thiết lập trên trang:
 
-**Bước 2:** Chọn chức năng “**Xác thực 2 lớp**”**.**
+| Thiết lập                         | Mô tả                                                                                                                           |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **Hỏi OTP khi Đăng Nhập**         | Công tắc chính. Khi **Bật**, hệ thống yêu cầu nhập mã OTP mỗi lần đăng nhập. Khi **Tắt**, các tuỳ chọn bên dưới bị vô hiệu hoá. |
+| **Gửi OTP đến điện thoại**        | Nhận mã OTP qua số điện thoại của tài khoản. Phương thích này chỉ hỗ trợ số điện thoại có mã quốc gia Việt Nam +84              |
+| **Số điện thoại**                 | Số điện thoại nhận OTP (chỉ hiển thị, không sửa tại đây). Nếu cần thay đổi thì sSử dụng chức năng Đổi số điện thoại.            |
+| **Ứng dụng Google Authenticator** | Nhận mã OTP từ ứng dụng Google Authenticator.                                                                                   |
+| **QR Code** — **Tạo QR code mới** | Tạo mã QR để liên kết tài khoản GreenNode với ứng dụng Google Authenticator.                                                    |
+| **Lưu thiết lập**                 | Lưu các thay đổi.                                                                                                               |
+| **Hủy**                           | Bỏ qua các thay đổi chưa lưu.                                                                                                   |
 
-Bật chức năng mong muốn xác thực tương tự như hình.&#x20;
+1.  **Nhận OTP qua sms**
 
-<figure><img src="../.gitbook/assets/image (171).png" alt=""><figcaption></figcaption></figure>
+    Nếu số điện thoại của bạn có mã quốc gia là Việt Nam (+84) thì tùy chọn "Gửi OTP đến điện thoại" sẽ sáng lên để bạn có thể bật/tắt tính năng này.
 
-Có 2 phương thức để nhận OTP là qua SMS hoặc qua ứng dụng Google Authenticator.
 
-&#x20;       1.1 Gửi OTP đến điện thoại (qua SMS): Bạn có thể Bật/Tắt chức năng này thông qua nút bấm ở mục Gửi OTP đến điện thoại.
 
-**Lưu** **ý:** _Nếu_ _khách_ _hàng_ _**có mã vùng điện thoại khác** Việt Nam (+84) không sử dụng được_ _phương_ _thức SMS._
+2. **Nhận OTP qua ứng dụng Google Authenticator.**
 
-&#x20;       1.2 Nhận OTP qua ứng dụng Google Authenticator.
+<figure><img src="../.gitbook/assets/screenshot_1794381080.png" alt="" width="375"><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (172).png" alt=""><figcaption></figcaption></figure>
-
-* Nhấn vào button **KHỞI TẠO**, bạn sẽ được đưa đến trang Tạo mã Google Authenticator và thực hiện theo các bước hướng dẫn
+* Nhấn vào button **Tạo QR code**, bạn sẽ được đưa đến trang Tạo mã Google Authenticator và thực hiện theo các bước hướng dẫn
 * Nhấn vào **Lưu thiết lập** để hoàn tất.
-* Bạn sẽ nhận được thông báo **Bạn đã hoàn tất**.
 
-<figure><img src="../.gitbook/assets/image (173).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/screenshot_1794381201.png" alt="" width="375"><figcaption></figcaption></figure>
 
-Ở màn hình **Chứng thực đa yếu tố** chỉ cần Bật/Tắt chức năng theo nhu cầu của bạn, có thể chọn 1 trong 2 hoặc là cả 2. Ở đây chúng tôi có hỗ trợ bạn tạo mã QR code mới, click vào link và làm theo hướng dẫn.
+Hệ thống sẽ gửi email thông báo các thiết lập đa yếu tố đã áp dụng.
 
-<figure><img src="../.gitbook/assets/image (174).png" alt=""><figcaption></figcaption></figure>
+Sau khi hoàn tất quá trình đăng ký chứng thực đa yếu tố, ở bước đăng nhập, tuỳ lựa chọn của khách hàng ở trên sẽ có các hình thức xác thực khác nhau.
 
-Cuối cùng, nhấn vào nút **Lưu thiết lập** để hoàn tất.
-
-**(\*)** Sau khi hoàn tất quá trình đăng ký chứng thực đa yếu tố, ở bước đăng nhập, tuỳ lựa chọn của khách hàng ở trên sẽ có các hình thức xác thực khác nhau.
-
-* Đối với nhận OTP qua SMS (chỉ áp dụng với số diện thoại có mã quốc gia (+84) - Việt Nam), chúng tôi sẽ gửi tin nhắn kèm OTP đến số điện thoại mà bạn đã đăng ký, bạn chỉ cần nhập mã được nhận để xác thực Đăng Nhập.
+* Đối với nhận OTP qua SMS, ngay sau khi bạn nhập đúng username và password, hệ thống sẽ tự động gửi một OTP đến số điện thoại của bạn, chỉ cần nhập mã nhận được để tiếp tục Đăng Nhập.
 * Đối với đăng nhập thông qua Google Authenticator. Bạn vui lòng mở ứng dụng Google Authenticator trong máy và sao chép 6 số PIN hiển thị trong ứng dụng và nhập vào form yêu cầu của chúng tôi.
-* Trường hợp chọn xác thực thông qua cả 2 lựa chọn trên. Bạn chỉ đơn giản làm theo 2 thao tác như trên để xác thực Đăng nhập.
