@@ -1,50 +1,56 @@
 # Đăng ký tài khoản
 
-**Hướng dẫn tạo tài khoản:**
+**Hướng dẫn tạo tài khoản GreenNode bằng email hoặc tài khoản Google để bắt đầu sử dụng các dịch vụ trên GreenNode Portal:**
 
-**Bước 1:**
+#### **Bước 1:**
 
-Tại trang chủ GreenNode, nhấp chọn chức năng “Đăng ký” như hình:
+Truy cập https://register.greennode.ai/signup?hl=vi hoặc tại trang chủ GreenNode (https://greennode.ai), nhấp chọn chức năng “Đăng ký” như hình:
 
-<figure><img src="../.gitbook/assets/dangky.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-Màn hình tương tự như sau:
+Màn hình đăng ký sẽ hiện ra như sau:
 
-<figure><img src="../.gitbook/assets/image (179).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-**Bước 2:** Tại trang **'Đăng ký tài khoản'**:
+#### **Bước 2:** Tại trang **'Đăng ký tài khoản'**:
 
-1. Điền đầy đủ các thông tin bao gồm **Email** và **Mã bảo vệ**. Sau đó chọn vào checkbox **Tôi đồng ý với Thỏa Thuận Sử Dụng Dịch vụ và Chính Sách Bảo vệ Dữ liệu Cá Nhân**.
-2. Click vào nút **Đăng ký** để hoàn tất thông tin đăng ký. Sẽ có một email gửi đến tài khoản email mà bạn đã dùng để đăng ký.
+Bạn có thể đăng ký tài khoản mới theo một trong hai cách:
 
-<figure><img src="../.gitbook/assets/image (180).png" alt=""><figcaption></figcaption></figure>
+* **2.1: Đăng ký bằng email**
+  * **2.1.1: Điền thông tin vào biểu mẫu đăng ký.**
+    *   Điền đầy đủ các trường sau:
 
-**Bước 3:** Kiểm tra lại hộp thoại email
+        <table><thead><tr><th width="201.5">Trường</th><th width="82">Bắt buộc</th><th>Mô tả</th></tr></thead><tbody><tr><td><strong>Email</strong></td><td>Có</td><td>Địa chỉ email dùng để đăng nhập và nhận thông báo từ GreenNode.</td></tr><tr><td><strong>Họ và tên</strong></td><td>Có</td><td>Họ và tên đầy đủ của bạn.</td></tr><tr><td><strong>Mật khẩu</strong></td><td>Có</td><td>Mật khẩu đăng nhập. Xem yêu cầu về mật khẩu bên dưới.</td></tr><tr><td><strong>Xác nhận mật khẩu</strong></td><td>Có</td><td>Nhập lại chính xác mật khẩu ở trường <strong>Mật khẩu</strong>.</td></tr><tr><td><strong>Số điện thoại</strong></td><td>Có</td><td>Chọn mã quốc gia ở danh sách bên trái (mặc định <strong>Vietnam (+84)</strong>), sau đó nhập số điện thoại.</td></tr><tr><td></td><td colspan="2"></td></tr></tbody></table>
 
-1. Bạn sẽ thấy một email với tiêu đề **GreenNode – Account Verification**. Nếu không tìm thấy bất kỳ email nào như trên, vui lòng kiểm tra lại trong thư mục **Spam.**
-2. Mở email và thực hiện theo hướng dẫn.
 
-**Bước 4:** Trong email hướng dẫn, click vào link **Liên kết này** để đến bước tiếp theo.
+    *   Đọc và đánh dấu vào các ô đồng ý:
 
-<figure><img src="../.gitbook/assets/email.png" alt=""><figcaption></figcaption></figure>
+        * **Tôi đồng ý với Thỏa Thuận Sử Dụng Dịch Vụ** — _bắt buộc_.
+        * **Tôi đồng ý với Chính sách bảo vệ dữ liệu cá nhân cho các mục đích cần thiết tại mục 5.1** — _bắt buộc_.
+        * **Tôi đồng ý với Chính sách bảo vệ dữ liệu cá nhân cho các mục đích xử lý tuỳ chọn tại mục 5.2** — _tuỳ chọn_.
 
-**Bước 5:** Sau khi click vào link trong email ở **bước 4**, form đăng ký cuối cùng sẽ được mở ra. Tại đây điền đầy đủ các thông tin vào form đăng ký.
+        Bạn có thể nhấn vào các liên kết **Thỏa Thuận Sử Dụng Dịch Vụ**, **mục 5.1** và **mục 5.2** để đọc toàn văn trước khi đồng ý.
+    * Nhấn **Đăng ký** để hoàn tất bước điền thông tin.
+  *   **2.1.2: Kích hoạt tài khoản:**&#x20;
 
-<br>
+      Sau khi hoàn tất, hệ thống sẽ gửi một email đến địa chỉ email vừa đăng ký, trong đó có chứa đường link để kích hoạt tài khoản. Quý khách vui lòng kiểm tra email và kích hoạt tài khoản trước khi **Đăng Nhập**.
+* **2.2: Đăng ký bằng tài khoản Google** - dùng tài khoản Google sẵn có, không cần tạo mật khẩu mới.
+  * **2.2.1: Đăng nhập vào tài khoản Google:**
+    * Tại trang **Đăng ký tài khoản**, nhấn **Sử dụng tài khoản Google**.
+    * Chọn tài khoản Google bạn muốn sử dụng và đăng nhập theo hướng dẫn của Google.
+  * **2.2.2: Bổ sung thông tin:**
+    *   Sau khi đăng nhập Google thành công, hệ thống chuyển đến màn hình **Vui lòng nhập các thông tin bên dưới trước khi tiếp tục đăng nhập.** Kiểm tra và hoàn thiện các trường sau:
 
-<figure><img src="../.gitbook/assets/image (182).png" alt=""><figcaption></figcaption></figure>
-
-* Những thông tin có đánh dấu **\***, người dùng bắt buộc phải nhập. Những thông tin còn lại có thể nhập hoặc không nhập.
-* Khi nhập mật khẩu, người dùng phải nhập theo hướng dẫn của hệ thống
-
-<figure><img src="../.gitbook/assets/image (183).png" alt=""><figcaption></figcaption></figure>
-
-Nhấp chọn vào ![](<../.gitbook/assets/image (184).png>) để nhận OTP đăng ký.
-
-* Nếu người dùng nhập số điện thoại, và mã quốc gia là Việt Nam (+84), OTP được gửi vào số điện thoại qua SMS
-* Nếu người dùng nhập vào số điện thoại và mã quốc gia không phải là Việt Nam. OTP sẽ được gửi vào email đăng ký.
-
-Người dùng nhập thông tin đăng ký, OTP vào bảng trên & nhấp chọn ![](<../.gitbook/assets/image (185).png>). Khi thông tin nhập liệu đã hợp lệ. Người dùng nhận được thông báo & email xác nhận đăng ký thành công.
+        | Trường            | Bắt buộc | Mô tả                                                                                          |
+        | ----------------- | -------- | ---------------------------------------------------------------------------------------------- |
+        | **Email**         | Có       | Được điền sẵn bằng email của tài khoản Google bạn vừa đăng nhập (có biểu tượng Google ở đầu).  |
+        | **Họ và tên**     | Có       | Được điền sẵn theo tên trên tài khoản Google. Kiểm tra và sửa lại nếu cần.                     |
+        | **Số điện thoại** | Có       | Chọn mã quốc gia ở danh sách bên trái (mặc định **Vietnam (+84)**), sau đó nhập số điện thoại. |
+    * Đọc và đánh dấu vào các ô đồng ý:
+      * **Tôi đồng ý với Thỏa Thuận Sử Dụng Dịch Vụ** — _bắt buộc_.
+      * **Tôi đồng ý với Chính sách bảo vệ dữ liệu cá nhân cho các mục đích cần thiết tại mục 5.1** — _bắt buộc_.
+      * **Tôi đồng ý với Chính sách bảo vệ dữ liệu cá nhân cho các mục đích xử lý tuỳ chọn tại mục 5.2** — _tuỳ chọn_.
+    * Bấm **Đăng Ký** để kết thúc.
 
 Các thông tin về email và số điện thoại của khách hàng được GreenNode mã hóa theo thuật toán Symmetric AES nhằm đảm bảo an toàn thông tin khách hàng
 
