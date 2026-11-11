@@ -315,6 +315,60 @@ kubectl apply -f nginx-service-lb4.yaml
 
 ***
 
+### Block access with ACL annotations <a href="#integratewithnetworkloadbalancer-blockaccesswithaclannotations" id="integratewithnetworkloadbalancer-blockaccesswithaclannotations"></a>
+
+Starting with version **0.4.2** of GreenNode LoadBalancer Controller, you can configure the ACL of a Load Balancer listener directly in your manifest (Service or Ingress) without using the vLB Portal. ACL rules are evaluated in the following order: **Dropped CIDRs** → **Allowed CIDRs** → **Default action**; the first matching rule wins, and any IP that matches no rule gets the **Default action**. Dropped traffic is silently discarded, so the client sees a timeout instead of a connection refusal.
+
+Related annotations:
+
+* `vks.vngcloud.vn/dropped-cidrs`: comma-separated list of blocked IPv4 CIDRs/IPs.
+* `vks.vngcloud.vn/inbound-cidrs`: comma-separated list of allowed IPv4 CIDRs/IPs.
+* `vks.vngcloud.vn/acl-default-action`: `accept` or `drop`.
+
+For example, block two sources from accessing the nginx Service above by adding this annotation to the Service:
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  annotations:
+    vks.vngcloud.vn/dropped-cidrs: "203.0.113.9/32,198.51.100.0/24"
+spec:
+  selector:
+    app: nginx
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+```
+
+Then run `kubectl apply -f nginx-service-lb4.yaml` again to update the Service.
+
+Common use cases:
+
+| Goal | Annotation |
+|---|---|
+| Block specific IPs/ranges | `vks.vngcloud.vn/dropped-cidrs: "203.0.113.9/32,198.51.100.0/24"` |
+| Allow only specific IP ranges | `vks.vngcloud.vn/inbound-cidrs: "192.0.2.0/24"` |
+| Allow a range except a few IPs | `vks.vngcloud.vn/inbound-cidrs: "192.0.2.0/24"` and `vks.vngcloud.vn/dropped-cidrs: "192.0.2.13/32"` |
+| Block all access | `vks.vngcloud.vn/dropped-cidrs: "0.0.0.0/0"` |
+
+{% hint style="info" %}
+Notes:
+
+* ACL annotations support IPv4 only and require GreenNode LoadBalancer Controller **0.4.2** or later. They also work for Ingress (ALB).
+* If you set `inbound-cidrs` without `acl-default-action`, the default action is `drop` — only the declared IP ranges can access the listener.
+* Invalid values (malformed CIDR, IPv6, unknown default action) make the Service/Ingress report an error, and the ACL keeps the last valid configuration.
+* Removing the annotation restores the listener ACL to the value it had before the controller took over.
+* If multiple Services/Ingresses share one Load Balancer, declare the ACL consistently; otherwise the controller reports a conflict.
+{% endhint %}
+
+For the full meaning of each annotation, see [Configure for a Network Load Balancer](cau-hinh-cho-mot-network-load-balancer.md).
+
+***
+
 ### **Step 2: Check Deployment and Service information just deployed** <a href="#kiem-tra-thong-tin-deployment-service-vua-deploy" id="kiem-tra-thong-tin-deployment-service-vua-deploy"></a>
 
 * Run the following command to test **Deployment**

@@ -1,5 +1,17 @@
 # Release notes
 
+## Nov 11, 2026
+
+VKS (VNG Kubernetes Engine) has just released a new update with the following improvements:
+
+**New features:**
+
+* **Configure vLB listener ACLs via annotations:** Starting with version **0.4.2** of GreenNode LoadBalancer Controller, you can configure the ACL of a Load Balancer listener directly in your manifest (Service for NLB, Ingress for ALB) — no vLB Portal needed.
+  * New annotations **`vks.vngcloud.vn/dropped-cidrs`** (comma-separated list of blocked IPv4 CIDRs/IPs, `0.0.0.0/0` = block all) and **`vks.vngcloud.vn/acl-default-action`** (`accept`/`drop` for IPs that match no rule).
+  * The existing `vks.vngcloud.vn/inbound-cidrs` annotation now works as a true whitelist: without `acl-default-action`, the default action is **drop**.
+  * Removing an annotation restores the listener to its previous ACL value; ACLs configured manually on the Portal are never overwritten.
+  * See [Integrate with Network Load Balancer](../network/working-with-nlb/integrate-with-network-load-balancer.md) and [Configure for a Network Load Balancer](../network/working-with-nlb/cau-hinh-cho-mot-network-load-balancer.md) for details.
+
 ## Sep 28, 2026 <a href="#sep_07_2026" id="sep_07_2026"></a>
 
 VKS (VNG Kubernetes Engine) has just released a new update with the following improvements:
