@@ -1,23 +1,13 @@
-# Change Password Guide
+# Forgot Password
 
-**Step 1:** Directly access the link [https://register.greennode.ai/resetpwd](https://register.greennode.ai/resetpwd) or  Select '**Forgot Password?**' on Login tab
+**Step 1:** Go directly to [https://register.greennode.ai/resetpwd](https://register.greennode.ai/resetpwd), or click the “Forgot your password” link on the Login screen.
 
-<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+**Step 2:** Enter the email address you used to register.
 
-**Step 2**: Enter the Email address you used for registration and the Security Code. Then press **Reset Password**.
+**Step 3:** The system will send an email containing a Reset password link. Please check your inbox and click the link to open the password reset screen.
 
-<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+**Step 4:** Fill in all the required information.
 
-You will receive a notification as below.
+**Note:** For the OTP verification step, if your phone number is a Vietnamese number (+84), the OTP will be sent via SMS. In all other cases, the OTP will be sent to your email.
 
-<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
-
-Please check your email with the subject "GreenNode - Reset Password." Click on this link to proceed to Step 3.
-
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
-
-**Step 3**: Fill in all the required information as requested. In the **OTP Confirmation** section, please click the "**Send OTP**" button to receive the OTP via the phone number you registered.
-
-<figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
-
-After that, please check your email again. You will receive an email titled "**GreenNode - Password Changed**" that the password has been successfully changed and will be redirected to the **login page**. Finally, log in to the system with the newly reset password.
+After you have changed your password successfully, the system will send an email confirming that your password has been changed.
