@@ -16,48 +16,7 @@
 **Step 3:** Save account information
 
 * Click Button "Save Setting" to complete updating information process.
+* The system will display a notice that your account information will be verified. During the verification process, you can only review the information you entered and cannot edit it.
 * Click " I understand and continue" . You will receive the message confirming the successful account update.
 
 ***
-
-## Withdraw agreement <a href="#capnhatthongtintaikhoan-truonghop-rutlaisudongy" id="capnhatthongtintaikhoan-truonghop-rutlaisudongy"></a>
-
-If there is a request to opt out of GreenNode collecting personal information, your business serving for GreenNode services to you. You can choose this function to delete the registered information.
-
-**Step 1** : Click "**Update profile**" button.
-
-**Step 2**: Click " **Withdraw agreement**" in the bottom screen:
-
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
-
-**Step 3**: Input protect code and click "**Withdraw agreement**" to confirm
-
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
-
-The next screen as shown in the following screen:
-
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
-
-Click "Close", the following screen:
-
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
-
-Within 3 days, you can cancel the withdrawal request by selecting the 'Cancel Withdrawal Request' function. If you do not cancel the request, GreenNode will proceed to delete your account while complying with data retention regulations.
-
-***
-
-## De-active my account <a href="#capnhatthongtintaikhoan-truonghop-xoataikhoan" id="capnhatthongtintaikhoan-truonghop-xoataikhoan"></a>
-
-In Case, you need de-active account, you could implement the following step:
-
-**Step 1**: Click "**Update profil**e" button.
-
-**Step 2**: Click " **De-active my account**"
-
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
-
-**Bước 3**: Input protect code and click "**De-active my account**" to confirm
-
-<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
-
-Within 3 days, you can cancel the account deletion request by selecting the 'Cancel Account Deletion Request' function. If you do not cancel the request, GreenNode will proceed to delete your account while complying with data storage regulations.
