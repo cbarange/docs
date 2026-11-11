@@ -1252,7 +1252,7 @@
   * [Đăng ký tài khoản](huong-dan-su-dung-tai-khoan/dang-ky-tai-khoan.md)
   * [Cập nhật thông tin tài khoản](huong-dan-su-dung-tai-khoan/cap-nhat-thong-tin-tai-khoan.md)
   * [Thiết lập xác thực 2 lớp (2FA)](huong-dan-su-dung-tai-khoan/thiet-lap-xac-thuc-2-lop.md)
-  * [Hướng dẫn đặt lại mật khẩu](huong-dan-su-dung-tai-khoan/huong-dan-dat-lai-mat-khau.md)
+  * [Hướng dẫn đặt lại mật khẩu (Quên mật khẩu)](huong-dan-su-dung-tai-khoan/huong-dan-dat-lai-mat-khau.md)
   * [Hướng dẫn hủy tài khoản](huong-dan-su-dung-tai-khoan/huong-dan-huy-tai-khoan.md)
   * [Hướng dẫn thay đổi số điện thoại](huong-dan-su-dung-tai-khoan/huong-dan-thay-doi-so-dien-thoai.md)
   * [Hướng dẫn quản lý địa chỉ nhận hóa đơn](huong-dan-su-dung-tai-khoan/huong-dan-quan-ly-dia-chi-nhan-hoa-don.md)
